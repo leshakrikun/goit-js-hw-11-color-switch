@@ -15,6 +15,7 @@ const colors = [
   let timerId = null;
   
   startBtn.addEventListener('click', () => {
+    startBtn.setAttribute("disabled", true);
     timerId = setInterval(changeColor, 1000);
   });
   
@@ -24,7 +25,7 @@ const colors = [
   });
 
     function changeColor () {
-    startBtn.setAttribute("disabled", true);
+    
     const colorNumber = randomIntegerFromInterval(0,colors.length-1)
     document.body.setAttribute('style', `background-color: ${colors[colorNumber]}`)
   };
